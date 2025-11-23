@@ -1,44 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Macho Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sultan Menu</title>
+
 <style>
     body {
         margin: 0;
-        background: rgba(0,0,0,0.4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial;
+        background: #000;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    /* ========== SIDEBAR ========== */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 230px;
+        height: 100%;
+        background: rgba(10,10,10,0.85);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 20px rgba(255,0,0,0.5);
+        padding: 20px 0;
+        border-right: 2px solid #FF0000;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 0 0 12px #FF0000;
+    }
+
+    .menu-item {
+        padding: 14px 20px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 17px;
+    }
+
+    .menu-item:hover {
+        background: rgba(255,0,0,0.2);
+        transform: translateX(5px);
+        box-shadow: inset 0 0 10px rgba(255,0,0,0.6);
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content {
+        margin-left: 230px;
+        padding: 30px;
         color: white;
     }
-    #box {
-        width: 350px;
-        padding: 20px;
+
+    .box {
         background: rgba(20,20,20,0.8);
+        padding: 20px;
         border-radius: 12px;
-        text-align: center;
+        width: 450px;
+        box-shadow: 0 0 25px rgba(0,150,0,0.7);
+        border: 2px solid #009639; /* UAE green */
     }
+
+    .box h3 {
+        margin-top: 0;
+        text-shadow: 0 0 10px #009639;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        margin-top: 10px;
+        width: 100%;
+        background: #FF0000;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 0 10px rgba(255,0,0,0.6);
+    }
+
+    .btn:hover {
+        background: #b30000;
+        transform: scale(1.05);
+    }
+
 </style>
 </head>
 <body>
 
-<div id="box">
-    <h2>🚀 Macho Menu</h2>
-    <p>جاهز يا سلطان</p>
-    <button onclick="alert('زر اشتغل')">Test Button</button>
+<div class="sidebar">
+    <h2>🇦🇪 Sultan Menu</h2>
+    <div class="menu-item" onclick="openTab('player')">Player</div>
+    <div class="menu-item" onclick="openTab('weapon')">Weapon</div>
+    <div class="menu-item" onclick="openTab('combat')">Combat</div>
+    <div class="menu-item" onclick="openTab('vehicle')">Vehicle</div>
+    <div class="menu-item" onclick="openTab('visual')">Visual</div>
+    <div class="menu-item" onclick="openTab('misc')">Misc</div>
+    <div class="menu-item" onclick="openTab('settings')">Settings</div>
+</div>
+
+<div class="content">
+    <div id="player" class="box">
+        <h3>Player Settings</h3>
+        <button class="btn" onclick="alert('Speed boosted!')">Increase Speed</button>
+        <button class="btn" onclick="alert('Godmode ON')">Enable Godmode</button>
+        <button class="btn" onclick="alert('Teleport Activated')">Teleport</button>
+    </div>
+
+    <div id="weapon" class="box" style="display:none;">
+        <h3>Weapon Mods</h3>
+        <button class="btn">Aim Assist</button>
+        <button class="btn">No Recoil</button>
+    </div>
+
+    <div id="combat" class="box" style="display:none;">
+        <h3>Combat Tools</h3>
+        <button class="btn">Triggerbot</button>
+        <button class="btn">Aimbot</button>
+    </div>
+
+    <div id="vehicle" class="box" style="display:none;">
+        <h3>Vehicle Options</h3>
+        <button class="btn">Boost</button>
+        <button class="btn">Repair</button>
+    </div>
+
+    <div id="visual" class="box" style="display:none;">
+        <h3>Visual Mods</h3>
+        <button class="btn">ESP Boxes</button>
+        <button class="btn">Night Vision</button>
+    </div>
+
+    <div id="misc" class="box" style="display:none;">
+        <h3>Miscellaneous</h3>
+        <button class="btn">Unlock All</button>
+    </div>
+
+    <div id="settings" class="box" style="display:none;">
+        <h3>Settings</h3>
+        <button class="btn">Change Menu Color</button>
+    </div>
 </div>
 
 <script>
-    // استقبال الرسائل من LUA
-    window.addEventListener("message", (e) => {
-        if (!e.data) return;
-
-        if (e.data.type === "alert") {
-            alert(e.data.text);
-        }
-    });
+function openTab(tab) {
+    document.querySelectorAll(".box").forEach(b => b.style.display = "none");
+    document.getElementById(tab).style.display = "block";
+}
 </script>
 
 </body>
