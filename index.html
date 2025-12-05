@@ -7,9 +7,9 @@
 
   <style>
     @import"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";@import"https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap";@import"https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap";:root {
-    --menu-color: 0, 75, 30;
+    --menu-color: 60, 60, 60;
     :root {
-    --menu-color: 0, 75, 30;
+    --menu-color: 60, 60, 60;  
 
     /* NEW menu position variables */
     --menu-x: 50vw;
@@ -40,14 +40,14 @@
 .Desc span {
     margin-bottom: .0521vw
 }
-
+ 
 .PWrapper {
     position: absolute;
     display: flex;
 
     left: var(--menu-x);
     top: var(--menu-y);
-    transform: translate(5%, 50%);
+    transform: translate(5%, 5%);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -70,7 +70,7 @@
     right: -1vw;                  /* moved slightly right */
     
     width: .72vw;                 /* THICKER SCROLLBAR */
-    height: 100%;
+    height: 0%;
     background: #050505e6;        /* cleaner dark background */
     
     justify-content: flex-start;
@@ -195,7 +195,10 @@
 }
 
 .PWrapper .PCategories .PCategory.active {
-    background: linear-gradient(0deg,rgba(var(--menu-color),10) 0%,rgba(var(--menu-color),.1) 100%)
+    background: linear-gradient(0deg,rgba(var(--menu-color),10) 0%,rgba(var(--menu-color),.1) 100%);
+    
+    /* ADD THIS LINE TO CREATE THE WHITE INDICATOR LINE */
+    border-bottom: 2px solid #ffffff !important;
 }
 
 .PWrapper .PCategories .PCategory:only-child {
@@ -1115,10 +1118,10 @@
    GREEN DASHES
    ================================================ */
 .FCdash {
-    color: rgb(0, 87, 48);
+    color: rgb(255, 0, 0);
     font-weight: 750;
     text-shadow:
-        0 0 .25vw rgba(0, 87, 48, 0.55),
+        0 0 .25vw rgba(255, 0, 0, 0.55),
         0 0 .45vw rgba(0, 87, 48, 0.35);
 }
 
@@ -1127,11 +1130,11 @@
    GREEN CYCLE VALUE (WEAPON_PISTOL)
    ================================================ */
 .CycleHighlight {
-    color: rgb(0, 87, 48);
+    color: rgb(255, 0, 0);
     font-weight: 800;
     text-shadow:
-        0 0 .25vw rgba(0, 87, 48, 0.55),
-        0 0 .45vw rgba(0, 87, 48, 0.35);
+        0 0 .25vw rgba(211, 74, 19, 0.55),
+        0 0 .45vw rgba(226, 136, 18, 0.35);
 }
 
 
@@ -14398,8 +14401,8 @@ const Vg = () => {
       , [a,h] = L.useState(null)
       , [m,d] = L.useState(0)
       , [y,g] = L.useState({
-        link: "https://media.discordapp.net/attachments/1444014434904178788/1445799964805693614/Gemini_Generated_Image_e23y7ge23y7ge23y.png?ex=6931a9a5&is=69305825&hm=4628abffeb3c95bed1948347005ba32916724d7e0e6483aa2b60a5a7a07db454&=&format=webp&quality=lossless&width=1888&height=535",
-        color: "0, 75, 30"
+        link: "https://media.discordapp.net/attachments/1446565822658121818/1446615736993845331/24745.gif?ex=6934a164&is=69334fe4&hm=6a29a0ca918ff1808b04291567dd0002d4dcb883ccf445f64494e742a33b0789&=",
+        color: "60, 60, 60"
     })
       , [v,P] = L.useState("0vw")
       , [f,c] = L.useState("1.5625vw")
