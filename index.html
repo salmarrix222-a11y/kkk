@@ -14237,147 +14237,33 @@ const Vg = () => {
         label: "Player",
         categories: [{
             label: "Player",
-            tabs: [{
-                type: "button",
-                label: "Revive"
-            }, {
-                type: "slider",
-                label: "Health",
-                value: 100
-            }, {
-                type: "slider",
-                label: "Armour",
-                value: 50
-            }, {
-                type: "scrollable-checkbox",
-                label: "Godmode",
-                checked: !0,
-                value: 1,
-                values: ["Safe"]
-            }, {
-                type: "divider",
-                label: "Movement"
-            }, {
-                type: "slider-checkbox",
-                label: "Noclip",
-                value: 2.5,
-                min: .25,
-                max: 5,
-                step: .25
-            }]
+            tabs: []
         }, {
             label: "Miscellaneous",
-            tabs: [{
-                type: "scrollable",
-                label: "Clear Tasks",
-                value: 1,
-                values: ["Primary", "Secondary"]
-            }, {
-                type: "subMenu",
-                label: "Equipment"
-            }]
+            tabs: []
         }, {
             label: "Wardrobe",
-            tabs: [{
-                type: "scrollable",
-                label: "Outfit",
-                value: 1,
-                values: ["Random", "Staff", "Police", "Civilian"]
-            }, {
-                type: "button",
-                label: "Skin Menu"
-            }, {
-                type: "divider",
-                label: "Clothing"
-            }]
+            tabs: []
         }]
     }, {
         type: "subMenu",
         label: "Weapon",
         categories: [{
             label: "Loadouts",
-            tabs: [{
-                type: "subMenu",
-                label: "Primary"
-            }, {
-                type: "subMenu",
-                label: "Secondary"
-            }]
+            tabs: []
         }, {
             label: "Attachments",
-            tabs: [{
-                type: "subMenu",
-                label: "Scopes"
-            }, {
-                type: "subMenu",
-                label: "Barrels"
-            }]
+            tabs: []
         }]
     }, {
         type: "subMenu",
         label: "Server",
         categories: [{
             label: "List",
-            tabs: [{
-                type: "button",
-                label: "Select Everyone"
-            }, {
-                type: "button",
-                label: "Un-Select Everyone"
-            }, {
-                type: "button",
-                label: "Clear Selection"
-            }, {
-                type: "divider",
-                label: "Nearby Players"
-            }, {
-                type: "checkbox",
-                label: "stuntdev - [1]",
-                checked: !1,
-                name: "J. Paul",
-                dead: !0,
-                metaData: [{
-                    key: "Distance",
-                    value: "317.0m"
-                }, {
-                    key: "Server ID",
-                    value: "1"
-                }, {
-                    key: "Health",
-                    value: "75",
-                    color: "0, 255, 17"
-                }, {
-                    key: "Armour",
-                    value: "90",
-                    color: "0, 132, 255"
-                }, {
-                    key: "Weapon",
-                    value: "Microsmg"
-                }, {
-                    key: "Vehicle",
-                    value: "CARNOTFOUND"
-                }, {
-                    key: "Alive",
-                    value: "Alive"
-                }, {
-                    key: "Speed",
-                    value: "0.0 km/h"
-                }, {
-                    key: "Visible",
-                    value: "Yes"
-                }]
-            }, {
-                type: "checkbox",
-                label: "ion - [2]",
-                checked: !1,
-                vehicle: !0
-            }]
+            tabs: []
         }, {
             label: "Safe",
-            tabs: [{
-                type: "button",
-                label: "Teleport to Player"
-            }]
+            tabs: []
         }]
     }, {
         type: "subMenu",
@@ -14504,7 +14390,7 @@ const Vg = () => {
                     {
                         const S = r[i];
                         S != null && S.categories && (u(F => [...F, {
-                            tabs: r,
+                            tabs:r,
                             categories: a,
                             categoryIndex: m
                         }]),
